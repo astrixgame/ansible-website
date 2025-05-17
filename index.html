@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ansible</title>
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="shortcut icon" href="assets/img/ansible-icon-dark.svg">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/yaml.min.js"></script>
+    </head>
+    <body>
+        <div class="background" style="background-image:url(assets/img/bg0.jpg)">
+            <div class="navbar">
+                <div class="content">
+                    <a href="#" class="logo">
+                        <img class="icon" src="assets/img/ansible-icon-light.svg" alt="Ansible logo">
+                        <img class="text" src="assets/img/ansible-text-light.svg" alt="Ansible text">
+                    </a>
+                    <div class="search">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
+                        </svg>
+                        <input type="text" placeholder="Search..">
+                    </div>
+                    <div class="mobile-menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
+                        </svg>
+                    </div>
+                    <div class="links">
+                        <a href="#">Home</a>
+                        <a href="#">About</a>
+                        <div class="link-dropdown">
+                            <span class="name">Examples</span>
+                            <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                <path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/>
+                            </svg>
+                            <div class="dropdown full-size">
+                                <div class="content">
+                                    <div class="col col-1-4">
+                                        <h3>Server Setup</h3>
+                                        <ul>
+                                            <li><a href="#">Basic Web Server</a></li>
+                                            <li><a href="#">Secure SSH Configuration</a></li>
+                                            <li><a href="#">Firewall (UFW)</a></li>
+                                            <li><a href="#">Timezone & Locale Setup</a></li>
+                                        </ul>
+                                    </div>
+                                    <hr>
+                                    <div class="col col-1-4">
+                                        <h3>Application Deployment</h3>
+                                        <ul>
+                                            <li><a href="#">Node.js App Deployment</a></li>
+                                            <li><a href="#">PHP + MySQL Stack</a></li>
+                                            <li><a href="#">Systemd Service Deployment</a></li>
+                                            <li><a href="#">Static Site Upload with Rsync</a></li>
+                                        </ul>
+                                    </div>
+                                    <hr>
+                                    <div class="col col-1-4">
+                                        <h3>System Automation</h3>
+                                        <ul>
+                                            <li><a href="#">User & Group Management</a></li>
+                                            <li><a href="#">Cron Job Setup</a></li>
+                                            <li><a href="#">Disk Mounting & FSTAB Edits</a></li>
+                                            <li><a href="#">Log Rotation</a></li>
+                                        </ul>
+                                    </div>
+                                    <hr>
+                                    <div class="col col-1-4">
+                                        <h3>Want to explore more?</h3>
+                                        <p>Go beyond the basics and unlock Ansible’s full potential.</p>
+                                        <a href="#" class="btn btn-chroma">
+                                            Explore more
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">Docs</a>
+                        <hr>
+                        <a href="#" class="link-social">
+                            <svg viewbox="0 0 98 96" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="content-blurry">
+                <section id="welcome">
+                    <div class="content">
+                        <div class="col col-1-2 text">
+                            <h1>Automate your <span class="gradient">infrastructure</span> with the simplicity of Ansible.</h1>
+                            <p>Agentless, human-readable automation that brings consistency and control to your IT operations—whether you're managing one server or thousands.</p>
+                            <a class="btn btn-chroma" href="#">
+                                Get started
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                    <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="col col-1-2 example">
+                            <div class="window">
+                                <div class="toolbar">
+                                    <div class="controls col-1-3">
+                                        <span class="red"></span>
+                                        <span class="orange"></span>
+                                        <span class="green"></span>
+                                    </div>
+                                    <div class="title col-1-3">
+                                        <span>install-traefik.yml</span>
+                                    </div>
+                                    <div class="col-1-3"></div>
+                                </div>
+                                <div class="content">
+<pre><code class="language-yaml">- hosts: all
+become: true
+tasks:
+- name: Install Traefik
+    get_url:
+    url: https://yourname.github.io/traefik
+    dest: /tmp/traefik.tar.gz
+
+- name: Extract Traefik
+    unarchive:
+    src: /tmp/traefik.tar.gz
+    dest: /usr/local/bin
+    remote_src: yes
+    extra_opts: [--strip-components=1]
+
+- name: Run Traefik
+    command: /usr/local/bin/traefik --entrypoints.web.address=:80
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="features">
+                    <div class="content">
+                        <div class="item col col-1-4">
+                            <img src="assets/img/automation.svg" alt="Automation">
+                            <h2>Automation</h2>
+                            <p>Automate server setup, deployments and updates with ease.</p>
+                        </div>
+                        <div class="item col col-1-4">
+                            <img src="assets/img/repetable.svg" alt="Repeatable">
+                            <h2>Repeatable</h2>
+                            <p>Ensure consistent environments every time you run a playbook.</p>
+                        </div>
+                        <div class="item col col-1-4">
+                            <img src="assets/img/modular.svg" alt="Modular">
+                            <h2>Modular</h2>
+                            <p>Reuse roles and tasks across different projects and teams.</p>
+                        </div>
+                        <div class="item col col-1-4">
+                            <img src="assets/img/agentless.svg" alt="Agentless">
+                            <h2>Agentless</h2>
+                            <p>No extra software needed – just SSH and Python on the target machine.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="background" style="background-image:url(assets/img/bg3.jpg)">
+            <div class="content-blurry">
+                <section id="howto">
+                    <div class="content">
+                        <div class="col col-1-2">
+                            <iframe src="https://www.youtube.com/embed/fHO1X93e4WA" title="What is Ansible?" allow="encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="blocks col col-1-2">
+                            <div class="block col col-1-2">
+                                <h3><span>1.</span> Define</h3>
+                                <p>Create structured and reusable playbooks that clearly describe your infrastructure, services, and automation logic using simple, human-readable YAML syntax.</p>
+                            </div>
+                            <div class="block col col-1-2">
+                                <h3><span>2.</span> Configure</h3>
+                                <p>Set up your inventory, define host groups, variables, and modular roles to reflect the structure and needs of your environment accurately and efficiently.</p>
+                            </div>
+                            <div class="block col col-1-2">
+                                <h3><span>3.</span> Execute</h3>
+                                <p>Run tasks across one or hundreds of machines with a single command, ensuring consistent behavior and minimizing manual intervention or error.</p>
+                            </div>
+                            <div class="block col col-1-2">
+                                <h3><span>4.</span> Maintain</h3>
+                                <p>Continuously improve and adapt your configurations by versioning, testing, and documenting changes to keep your infrastructure reliable over time.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="footer">
+                    <div class="content">
+                        <div class="cols">
+                            <div class="col col-1-4 about-us">
+                                <h3>About us</h3>
+                                <p>We specialize in providing clear, practical guidance on IT automation using Ansible. Our goal is to empower teams to streamline workflows, and accelerate deployments.</p>
+                            </div>
+                            <div class="col col-1-4 links">
+                                <h3>Resources</h3>
+                                <ul>
+                                    <li><a href="#">Getting Started</a></li>
+                                    <li><a href="#">Installation</a></li>
+                                    <li><a href="#">YAML Syntax</a></li>
+                                    <li><a href="#">Inventory files</a></li>
+                                    <li><a href="#">Roles & Playbooks</a></li>
+                                </ul>
+                            </div>
+                            <div class="col col-1-4 links">
+                                <h3>Use Cases</h3>
+                                <ul>
+                                    <li><a href="#">Web Server Setup</a></li>
+                                    <li><a href="#">Firewall automation</a></li>
+                                    <li><a href="#">Traefik Reverse Proxy</a></li>
+                                    <li><a href="#">Cron Job Management</a></li>
+                                    <li><a href="#">Multi-server Deployment</a></li>
+                                </ul>
+                            </div>
+                            <div class="col col-1-4 newsletter">
+                                <h3>Newsletter</h3>
+                                <p>Subscribe to get the latest tips, tutorials, and news about Ansible automation straight to your inbox.</p>
+                                <div class="email-input">
+                                    <input type="text" placeholder="Your email..">
+                                    <button>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                            <path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480l0-83.6c0-4 1.5-7.8 4.2-10.8L331.8 202.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8 17.7 316.6C7.1 311.3 .3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="copyright">
+                            <p>&copy; Ansible 2025. All rights reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            const mobileMenuButton = document.querySelector(".navbar .mobile-menu");
+            const menuLinks = document.querySelector(".navbar .links");
+
+            mobileMenuButton.addEventListener('click', () => {
+                menuLinks.classList.toggle("mobile-visible");
+            });
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>
