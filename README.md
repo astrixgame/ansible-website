@@ -67,3 +67,7 @@ This project is maintained by a team passionate about IT automation and Ansible.
 ---
 
 &copy; Ansible 2025. All rights reserved.
+
+## License
+
+This project is licensed under the terms of the LICENSE file provided in this repository. Please review the LICENSE file for details.
